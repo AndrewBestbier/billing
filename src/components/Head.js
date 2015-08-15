@@ -8,13 +8,13 @@ var PureRenderMixin = require('react/addons').addons.PureRenderMixin;
 
 var Head = React.createClass({
 
-  displayName: 'Head',
+    displayName: 'Head',
 
-  mixins: [PureRenderMixin],
+    mixins: [PureRenderMixin],
 
-  render: function() {
-    return (
-      <head>
+    render: function() {
+        return (
+            <head>
         <meta charSet="utf-8" />
         <title>{this.props.title}</title>
         <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -22,9 +22,11 @@ var Head = React.createClass({
         <meta name="apple-mobile-web-app-capable" content="yes"/>
         <meta name="mobile-web-app-capable" content="yes"/>
         <link href='/static/normalize.css' rel='stylesheet' />
+        <link href='/static/bootstrap.css' rel='stylesheet' />
+        <link href='/static/main.css' rel='stylesheet' />
       </head>
-    );
-  }
+        );
+    }
 });
 
 module.exports = Head;

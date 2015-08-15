@@ -2,17 +2,19 @@
 
 "use strict";
 
-var Dispatcher = require('../dispatcher');
+var Dispatcher = require('../dispatcher/dispatcher');
 var EventEmitter = require('events').EventEmitter;
 var assign = require('object-assign');
 var CHANGE_EVENT = 'change';
 
-// Data structures that this store manipulates
-var _things = [];
+// Data structures
+var _store = {
+    callCharges: {},
+    package: {},
+    skyStore: {},
+    statement: {}
+};
 
-function _addThing(thing) {
-    _things.push(thing);
-}
 
 var ExampleStore = assign({}, EventEmitter.prototype, {
 
@@ -28,18 +30,19 @@ var ExampleStore = assign({}, EventEmitter.prototype, {
         this.removeListener(CHANGE_EVENT, callback);
     },
 
-    getThing: function() {
-        return _things;
+    getData: function() {
+        return _store
     }
-
 });
 
 ExampleStore.dispatchToken = Dispatcher.register(function(payload) {
-    var action = payload.action;
+    if (payload.action === 'INIT_STORE') {
+        _store.callCharges = payload.data.callCharges;
+        _store.package = payload.data.package;
+        _store.skyStore = payload.data.skyStore;
+        _store.statement = payload.data.statement;
 
-    if (action === 'EXAMPLE_ACTION') {
-        _addThing(payload.thing);
-        ExampleStore.emitChange();
+        ExampleStore.emitChange(CHANGE_EVENT);
     }
 
 });
