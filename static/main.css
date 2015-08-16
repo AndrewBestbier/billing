@@ -1,3 +1,96 @@
 body{
-	background-color: #EDECEC
+	background-color: #EDECEC;
+	padding: 150px;
+}
+
+
+/* Custom Styling for Griddle Component */
+
+.griddle-container{
+  border:1px solid #DDD;
+  font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.griddle .top-section{
+  clear:both;
+  display:table;
+  width:100%;
+}
+
+.griddle .griddle-filter{
+  float:left;
+  width:50%;
+  text-align:left;
+  color:#222;
+  min-height:1px;
+}
+
+.griddle .griddle-settings-toggle{
+  float:left;
+  width:50%;
+  text-align:right;
+}
+
+.griddle .griddle-settings{
+  background-color:#FFF;
+  border:1px solid #DDD;
+  color:#222;
+  padding:10px;
+  margin-bottom:10px;
+}
+
+.griddle .griddle-settings .griddle-columns{
+  clear:both;
+  display:table;
+  width:100%;
+  border-bottom:1px solid #EDEDED;
+  margin-bottom:10px;
+}
+
+.griddle .griddle-settings .griddle-column-selection{
+  float:left;
+  width:20%;
+}
+.griddle table{
+  width:100%;table-layout:fixed;
+}
+
+.griddle th{
+  border:0px;
+  font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+  border-bottom:1px solid #DDD;
+  padding:5px;
+}
+
+.griddle td{
+  padding:5px;
+  background-color:#FFF;
+  border-top-color:#DDD;
+  color:#222;
+  font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+}
+
+.griddle .footer-container{
+  padding:0px;
+  border:0px;
+  color:#222;
+}
+
+.griddle .griddle-page{
+  text-align:center;
+}
+
+/* This resolves a weird conflict between the Bootstrap Css and this component. Bootstrap uses it's own image */
+select, select.form-control {
+  background-image: none;
+}
+
+select:focus, select.form-control:focus {
+  background-image: none;
+}
+
+/* To make the three NavTabs stretch the width of the page and have a margin between the tabs and table */
+.nav-tabs>li {
+  width: 33.33%;
+  margin-bottom: 10px;
 }
