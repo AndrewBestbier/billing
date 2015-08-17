@@ -1,6 +1,8 @@
 body{
 	background-color: #EDECEC;
-	padding: 150px;
+  padding-left: 150px;
+  padding-right: 150px;
+  padding-top:87px;
 }
 
 
@@ -60,6 +62,11 @@ body{
   font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
   border-bottom:1px solid #DDD;
   padding:5px;
+  font-size: 13px;
+  text-align: center;
+  color: #666666;
+  font-weight:normal;
+  font-style:normal;
 }
 
 .griddle td{
@@ -67,7 +74,10 @@ body{
   background-color:#FFF;
   border-top-color:#DDD;
   color:#222;
+  font-size: 12px;
   font-family: "Roboto","Helvetica Neue",Helvetica,Arial,sans-serif;
+  text-align: center;
+  color: #666666;
 }
 
 .griddle .footer-container{
@@ -80,9 +90,34 @@ body{
   text-align:center;
 }
 
+.griddle-previous {
+  width: 33%;
+  float: left;
+  text-align: right;
+  min-height: 1px;
+  margin-top: 5px;
+}
+
+.griddle-next {
+  text-align: left;
+  width: 34%;
+  float: left;
+  min-height: 1px;
+  margin-top: 5px;
+}
+.griddle-page {
+  text-align: center;
+  width: 33%;
+  float: left;
+  min-height: 1px;
+  margin-top: 5px;
+}
+
 /* This resolves a weird conflict between the Bootstrap Css and this component. Bootstrap uses it's own image */
 select, select.form-control {
   background-image: none;
+  font-size: 12px;
+  margin-bottom: 5px;
 }
 
 select:focus, select.form-control:focus {
@@ -93,4 +128,35 @@ select:focus, select.form-control:focus {
 .nav-tabs>li {
   width: 33.33%;
   margin-bottom: 10px;
+  text-align: center
 }
+
+/* The title of the panels */
+.title {
+  text-align: center
+}
+
+/* Getting the correct shade of Blue for the tabs as seen on their website at: https://corporate.sky.com/about-sky/our-locations */
+.nav-tabs>li.active>a, .nav-tabs>li.active>a:focus {
+  box-shadow: inset 0 -2px 0 #0073C5;
+  color: #0073C5;
+}
+
+.nav-tabs>li>a:hover, .nav-tabs>li>a:focus:hover {
+    background-color: transparent;
+    -webkit-box-shadow: inset 0 -2px 0 #0073C5;
+    box-shadow: inset 0 -2px 0 #0073C5;
+    color: #0073C5;
+}
+
+.nav-tabs>li.active>a:hover, .nav-tabs>li.active>a:focus:hover {
+    border: none;
+    color: #0073C5;
+}
+
+/* Making the tabs stretch comletely across the panel to overcome the panels padding */
+.nav {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+

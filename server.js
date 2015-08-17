@@ -36,20 +36,6 @@ server.use(cors());
 // Our handler for all incoming requests
 server.use(function(req, res, next) {
 
-    // In order to handle "media queries" server-side (preventing FOUT), we parse the user agent string,
-    // and pass a string down through the router that lets components style and render themselves
-    // For the correct viewport. Client.js uses window width, which resolves any problems with
-    // browser sniffing.
-    var parser = new UAParser();
-    var ua = parser.setUA(req.headers['user-agent']).getResult();
-    var deviceType = "";
-    if (ua.device.type === undefined) {
-        deviceType = "desktop";
-    }
-    else {
-        deviceType = ua.device.type;
-    }
-
     // We customize the onAbort method in order to handle redirects
     var router = Router.create({
         routes: routes,
@@ -70,7 +56,6 @@ server.use(function(req, res, next) {
     router.run(function(Handler, state) {
         content = React.renderToString(React.createElement(Handler, {
             routerState: state,
-            deviceType: deviceType,
             environment: "server"
         }), null);
     });

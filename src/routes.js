@@ -1,5 +1,3 @@
-/* @flow weak */
-
 "use strict";
 
 var React = require('react');
@@ -10,10 +8,9 @@ var Redirect = require('react-router').Redirect;
 
 var Routes = (
     <Route handler={require('./components/App')}>
-    <DefaultRoute name="Home" handler={require('./components/Home')}/>
-    <Route name="About Me" path="/about" handler={require('./components/About')}/>
-    <NotFoundRoute handler={require('./components/NotFound')}/>
-  </Route>
+    	<DefaultRoute name="Home" handler={require('./components/Home')}/>
+    	<NotFoundRoute handler={require('./components/NotFound')}/>
+  	</Route>
 );
 
 module.exports = Routes;

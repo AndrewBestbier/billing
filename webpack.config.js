@@ -1,5 +1,3 @@
-/* @flow weak */
-
 "use strict";
 
 var webpack = require('webpack');
@@ -33,9 +31,5 @@ var config = {
         }]
     }
 };
-
-if (process.env.NODE_ENV === "development") {
-    config.devtool = 'eval'; // This is not as dirty as it looks. It just generates source maps without being crazy slow.
-}
 
 module.exports = config;

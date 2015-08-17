@@ -12,11 +12,12 @@ var _store = {
     callCharges: {},
     package: {},
     skyStore: {},
-    statement: {}
+    statement: {},
+    total: ''
 };
 
 
-var ExampleStore = assign({}, EventEmitter.prototype, {
+var BillingStore = assign({}, EventEmitter.prototype, {
 
     emitChange: function() {
         this.emit(CHANGE_EVENT);
@@ -35,16 +36,17 @@ var ExampleStore = assign({}, EventEmitter.prototype, {
     }
 });
 
-ExampleStore.dispatchToken = Dispatcher.register(function(payload) {
+BillingStore.dispatchToken = Dispatcher.register(function(payload) {
     if (payload.action === 'INIT_STORE') {
         _store.callCharges = payload.data.callCharges;
         _store.package = payload.data.package;
         _store.skyStore = payload.data.skyStore;
         _store.statement = payload.data.statement;
+        _store.total = payload.data.total;
 
-        ExampleStore.emitChange(CHANGE_EVENT);
+        BillingStore.emitChange(CHANGE_EVENT);
     }
 
 });
 
-module.exports = ExampleStore;
+module.exports = BillingStore;

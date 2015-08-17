@@ -7,7 +7,6 @@ var Title = require('react-document-title');
 var RouteHandler = require('react-router').RouteHandler;
 var NavBar = require('./NavBar');
 var actions = require('../actions/Actions');
-var store = require('../stores/ExampleStore');
 
 var App = React.createClass({
 
