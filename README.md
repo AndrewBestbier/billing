@@ -1,9 +1,31 @@
-# To run navigate to http://localhost:8080 and run
-npm start
+### To run navigate to http://localhost:8080 and run
 
-# To run development with hot-loading run:
-npm run dev
+```sh
+$ npm install
+$ npm start
+```
 
-# Too build for production run:
-npm run build
+### To run development with hot-loading:
+```sh
+$ npm run dev
+```
+
+### To build for production:
+```sh
+$ npm run build
+```
+### To run the tests:
+
+```sh
+$ npm run test
+```
+
+
+
+
+
+
+
+
+
 
