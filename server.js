@@ -98,3 +98,7 @@ server.listen(port);
 if (process.env.NODE_ENV === "development") {
     console.log('server.js is listening on port ' + port);
 }
+
+if (process.env.NODE_ENV === "production") {
+    console.log('server.js is listening on port ' + port);
+}

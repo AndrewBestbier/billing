@@ -11,6 +11,7 @@ var actions = require('../actions/Actions');
 var App = React.createClass({
 
     componentWillMount: function() {
+        //When the app is run for the first time, initializeStore is called which does an ajax call and populates the store
         actions.initializeStore();
     },
 
